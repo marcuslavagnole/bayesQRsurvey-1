@@ -48,7 +48,7 @@ static double log_post_SL_stable(const vec& beta,
   vec s    = X.t() * (w % ind);
 
   vec z = spd_solve_from_chol(L_XtWX, s);
-  double quad = 0.5 * (lambda / (tau * (1.0 - tau))) * dot(s, z);
+  double quad = 0.5 * (1 / (tau * (1.0 - tau))) * dot(s, z);
 
   return lp - quad;
 }
